@@ -1,55 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disease Prediction</title>
+    <link rel="stylesheet" href="./static/style.css">
 </head>
+
 <body>
-    <h1>Disease Prediction</h1>
-    <form method="POST" action="/predict">
-        <!-- Fever -->
-        <label for="Fever">Fever:</label>
-        <input type="radio" name="Fever" value="Yes" required> Yes
-        <input type="radio" name="Fever" value="No"> No<br><br>
+    <div class="image">
+        <img src="{{ url_for('static', filename='images/intro.png') }}" alt="doctor">
+    </div>
+    <div class="topline">
+        <h1>Not feeling your best?Let us decode your symptoms in seconds!</h1>
+    </div>
+    <div class="sticky-title">Your Health, Decoded</div>
+    </header>
 
-        <!-- Cough -->
-        <label for="Cough">Cough:</label>
-        <input type="radio" name="Cough" value="Yes" required> Yes
-        <input type="radio" name="Cough" value="No"> No<br><br>
+    <main class="content">
+        <p>Scroll down to see the form!</p>
+        <div class="form-container">
+           
+            <form method="POST" action="/predict">
+                <label for="name">Name:</label>
+                <input type="text" name="name" required><br><br>
+                <p>Gender:</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Gender" value="Male" required> Male</label>
+                <label><input type="radio" name="Gender" value="Female"> Female</label>
+                </div><br><br>
 
-        <!-- Fatigue -->
-        <label for="Fatigue">Fatigue:</label>
-        <input type="radio" name="Fatigue" value="Yes" required> Yes
-        <input type="radio" name="Fatigue" value="No"> No<br><br>
+                <label for="age">Age:</label>
+                <input type="text" name="Age" required><br><br>                
 
-        <!-- Difficulty Breathing -->
-        <label for="Difficulty_Breathing">Difficulty Breathing:</label>
-        <input type="radio" name="Difficulty_Breathing" value="Yes" required> Yes
-        <input type="radio" name="Difficulty_Breathing" value="No"> No<br><br>
+                <!-- Fever -->
+                 <p>Fever:</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Fever" value="Yes" required>&nbsp&nbsp&nbspYes</label>
+                <label><input type="radio" name="Fever" value="No" required>&nbsp&nbsp&nbspNo</label>
+                </div><br><br>
 
-        <!-- Age (text input) -->
-        <label for="Age">Age:</label>
-        <input type="text" name="Age" required><br><br>
+                <!-- Cough -->
+                <p>Cough</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Cough" value="Yes" required>Yes</label>
+                <label><input type="radio" name="Cough" value="No"> No</label>
+                </div><br><br>
 
-        <!-- Blood Pressure -->
-        <label for="Blood_Pressure">Blood Pressure:</label>
-        <input type="radio" name="Blood_Pressure" value="Low" required> Low
-        <input type="radio" name="Blood_Pressure" value="Normal"> Normal
-        <input type="radio" name="Blood_Pressure" value="High"> High<br><br>
+                <!-- Fatigue -->
+                <p>Fatigue</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Fatigue" value="Yes" required> Yes</label>
+                <label><input type="radio" name="Fatigue" value="No"> No</label>
+                </div><br><br>
 
-        <!-- Cholesterol Level -->
-        <label for="Cholesterol_Level">Cholesterol Level:</label>
-        <input type="radio" name="Cholesterol_Level" value="Low" required> Low
-        <input type="radio" name="Cholesterol_Level" value="Normal"> Normal
-        <input type="radio" name="Cholesterol_Level" value="High"> High<br><br>
+                <!-- Difficulty Breathing -->
+                 <p>Difficulty_Breathing</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Difficulty_Breathing" value="Yes" required> Yes</label>
+                <label><input type="radio" name="Difficulty_Breathing" value="No" required>No</label>
+                </div><br><br>
 
-        <input type="submit" value="Submit">
-    </form>
+                
 
-    {% if prediction_text %}
+                <!-- Blood Pressure -->
+                <p>Blood Pressure</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Blood_Pressure" value="Low" required> Low</label>
+                <label><input type="radio" name="Blood_Pressure" value="Normal"> Normal</label>
+                <label><input type="radio" name="Blood_Pressure" value="High"> High</label>
+                 </div><br><br>
+
+                <!-- Cholesterol Level -->
+                <p>Cholesterol Level</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Cholesterol_Level" value="Low" required> Low</label>
+                <label><input type="radio" name="Cholesterol_Level" value="Normal"> Normal</label>
+                <label><input type="radio" name="Cholesterol_Level" value="High"> High</label>
+                </div><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        {% if prediction_text %}
         <h3>{{ prediction_text }}</h3>
-    {% endif %}
+        {% endif %}
+    </main>
+    <script src="./static/script.js"></script>
 </body>
+
 </html>

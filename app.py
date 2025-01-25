@@ -51,7 +51,7 @@ def predict():
 
         print(f"Prediction result: {prediction}")
 
-       
+        # Return the prediction result to the webpage
         return render_template('index.html', prediction_text=f"The predicted disease is: {prediction}")
 
 if __name__ == '__main__':
