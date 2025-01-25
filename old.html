@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+</head>
+<body>
+    <h1>Disease Prediction</h1>
+    <form method="POST" action="/predict">
+        <!-- Fever -->
+        <label for="Fever">Fever:</label>
+        <input type="radio" name="Fever" value="Yes" required> Yes
+        <input type="radio" name="Fever" value="No"> No<br><br>
+
+        <!-- Cough -->
+        <label for="Cough">Cough:</label>
+        <input type="radio" name="Cough" value="Yes" required> Yes
+        <input type="radio" name="Cough" value="No"> No<br><br>
+
+        <!-- Fatigue -->
+        <label for="Fatigue">Fatigue:</label>
+        <input type="radio" name="Fatigue" value="Yes" required> Yes
+        <input type="radio" name="Fatigue" value="No"> No<br><br>
+
+        <!-- Difficulty Breathing -->
+        <label for="Difficulty_Breathing">Difficulty Breathing:</label>
+        <input type="radio" name="Difficulty_Breathing" value="Yes" required> Yes
+        <input type="radio" name="Difficulty_Breathing" value="No"> No<br><br>
+
+        <!-- Age (text input) -->
+        <label for="Age">Age:</label>
+        <input type="text" name="Age" required><br><br>
+
+        <!-- Blood Pressure -->
+        <label for="Blood_Pressure">Blood Pressure:</label>
+        <input type="radio" name="Blood_Pressure" value="Low" required> Low
+        <input type="radio" name="Blood_Pressure" value="Normal"> Normal
+        <input type="radio" name="Blood_Pressure" value="High"> High<br><br>
+
+        <!-- Cholesterol Level -->
+        <label for="Cholesterol_Level">Cholesterol Level:</label>
+        <input type="radio" name="Cholesterol_Level" value="Low" required> Low
+        <input type="radio" name="Cholesterol_Level" value="Normal"> Normal
+        <input type="radio" name="Cholesterol_Level" value="High"> High<br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>

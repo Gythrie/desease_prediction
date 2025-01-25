@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+
+<style>
+    body {
+        background-color:rgb(54, 209, 248);
+    }
+</style>
+
+<body>
+    <div class="res">
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+        {% endif %}
+        {% if details %}
+        <h3>Details:</h3>
+        <p>{{ details }}</p>
+    {% endif %}
+
+    {% if self_care %}
+        <h3>Self-Care Tips:</h3>
+        <p>{{ self_care }}</p>
+    {% endif %}
+    </div>
+</body>
+</html>

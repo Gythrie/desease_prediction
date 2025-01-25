@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+
+<body>
+    <div class="image">
+        <img src="{{ url_for('static', filename='images/intro.png') }}" alt="doctor">
+    </div>
+    <div class="topline">
+        <h1>Not feeling your best?Let us decode your symptoms in seconds!</h1>
+    </div>
+    <div class="sticky-title">Your Health, Decoded</div>
+    </header>
+
+    <main class="content">
+        <p>Scroll down to see the form!</p>
+        <div class="form-container">
+           
+            <form method="POST" action="/predict">
+                <label for="name">Name:</label>
+                <input type="text" name="name" required><br><br>
+                <p>Gender:</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Gender" value="Male" required> Male</label>
+                <label><input type="radio" name="Gender" value="Female"> Female</label>
+                </div><br><br>
+
+                <label for="age">Age:</label>
+                <input type="text" name="Age" required><br><br>                
+
+                <!-- Fever -->
+                 <p>Fever:</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Fever" value="Yes" required>&nbsp&nbsp&nbspYes</label>
+                <label><input type="radio" name="Fever" value="No" required>&nbsp&nbsp&nbspNo</label>
+                </div><br><br>
+
+                <!-- Cough -->
+                <p>Cough</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Cough" value="Yes" required>&nbsp&nbsp&nbspYes</label>
+                <label><input type="radio" name="Cough" value="No"> &nbsp&nbsp&nbspNo</label>
+                </div><br><br>
+
+                <!-- Fatigue -->
+                <p>Fatigue</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Fatigue" value="Yes" required> &nbsp&nbsp&nbspYes</label>
+                <label><input type="radio" name="Fatigue" value="No"> &nbsp&nbsp&nbspNo</label>
+                </div><br><br>
+
+                <!-- Difficulty Breathing -->
+                 <p>Difficulty_Breathing</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Difficulty_Breathing" value="Yes" required> &nbsp&nbsp&nbspYes</label>
+                <label><input type="radio" name="Difficulty_Breathing" value="No" required>&nbsp&nbsp&nbspNo</label>
+                </div><br><br>
+
+                
+
+                <!-- Blood Pressure -->
+                <p>Blood Pressure</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Blood_Pressure" value="Low" required> &nbsp&nbsp&nbspLow</label>
+                <label><input type="radio" name="Blood_Pressure" value="Normal">&nbsp&nbsp&nbsp Normal</label>
+                <label><input type="radio" name="Blood_Pressure" value="High"> &nbsp&nbsp&nbspHigh</label>
+                 </div><br><br>
+
+                <!-- Cholesterol Level -->
+                <p>Cholesterol Level</p>
+                <div class="radio-group">
+                <label><input type="radio" name="Cholesterol_Level" value="Low" required> &nbsp&nbsp&nbspLow</label>
+                <label><input type="radio" name="Cholesterol_Level" value="Normal"> &nbsp&nbsp&nbspNormal</label>
+                <label><input type="radio" name="Cholesterol_Level" value="High"> &nbsp&nbsp&nbspHigh</label>
+                </div><br><br>
+                <input type="submit" style="background-color:lightgreen" value="Submit">
+            </form>
+        </div>
+
+        {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </main>
+    <script src="./static/script.js"></script>
+</body>
+
+</html>
