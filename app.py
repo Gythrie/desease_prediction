@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import numpy as np
 import pickle
 
+
 app = Flask(__name__)
 disease_data = {
   "Influenza": {
@@ -387,7 +388,13 @@ model = pickle.load(open('disease.pk1', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('index.html')  
+    return render_template('index.html')
+@app.route('/about')
+def about_us():
+    return render_template('about.html') 
+@app.route('/doctor')
+def doctor_info():
+    return render_template('doctor.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():

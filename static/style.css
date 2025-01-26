@@ -250,3 +250,135 @@
       transform: translate(-50%, -50%);
     }
   }
+  /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #333; /* Dark background color */
+  padding: 15px;
+  position: sticky; /* Keeps the navbar at the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.nav-list li {
+  margin: 0 20px; /* Space between the items */
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: white; /* Text color */
+  font-size: 18px; /* Text size */
+  font-weight: bold; /* Make text bold */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.nav-list a:hover {
+  color: #4CAF50; /* Hover color for the links */
+}
+
+/* Optional: Add responsive design */
+@media (max-width: 768px) {
+  .nav-list {
+      flex-direction: column; /* Stack links vertically on smaller screens */
+  }
+
+  .nav-list li {
+      margin: 10px 0; /* Adjust space between items when stacked */
+  }
+}
+/* Style for the nav bar */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;  /* Align items to the right */
+}
+
+nav ul li {
+  margin-left: 20px;  /* Space between the items */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;  /* Make the text bold */
+  padding: 10px 15px;
+}
+
+nav ul li a:hover {
+  background-color: #575757;  /* Change background color on hover */
+}
+/* Main Container */
+.about-container {
+  padding: 50px;
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.about-container p {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Section Styling */
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+section p {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+.topline i {
+  margin-left: 10px; /* Space between the text and the icon */
+  font-size: 1.5em; /* Adjust the size of the icon */
+  color: #007bff; /* Change the icon color if desired */
+}
+
+
