@@ -4,30 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
+    <title>Diagnosis Result</title>
     <link rel="stylesheet" href="./static/style.css">
 </head>
 
 <style>
     body {
-        background-color:rgb(54, 209, 248);
+        font-family: 'Roboto', Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .res {
+        top:20px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 900px;
+        width: 90%;
+        text-align: left;
+        line-height: 1.6;
+    }
+
+    h3 {
+        color: #333333;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #555555;
+        margin-bottom: 15px;
+    }
+
+    .res h3:first-of-type {
+        color: #007bff; /* Accent color for the main result */
+        font-size: 1.5em;
+        font-weight: bold;
     }
 </style>
 
 <body>
     <div class="res">
-    {% if prediction_text %}
-        <h3>{{ prediction_text }}</h3>
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
         {% endif %}
         {% if details %}
-        <h3>Details:</h3>
-        <p>{{ details }}</p>
-    {% endif %}
-
-    {% if self_care %}
-        <h3>Self-Care Tips:</h3>
-        <p>{{ self_care }}</p>
-    {% endif %}
+            <h3>Details:</h3>
+            <p>{{ details }}</p>
+        {% endif %}
+        {% if self_care %}
+            <h3>Self-Care Tips:</h3>
+            <p>{{ self_care }}</p>
+        {% endif %}
     </div>
 </body>
 </html>
